@@ -45,18 +45,22 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-let playerChoice = prompt("choose either rock, paper, or scissors");
-let computerChoice = getComputerChoice();
-playerChoice = playerChoice.toLowerCase();
-
-console.log(computerChoice);
-console.log(playRound(playerChoice, computerChoice));
-
-if (playerChoice === computerChoice){
-    while(playerChoice === computerChoice){
+function game(){
+    for (let i = 0; i < 5; i++) {
         playerChoice = prompt("choose either rock, paper, or scissors");
-        playerChoice = playerChoice.toLowerCase();
         computerChoice = getComputerChoice();
         console.log(playRound(playerChoice, computerChoice));
+
+        if (playerChoice === computerChoice){
+            while(playerChoice === computerChoice){
+                playerChoice = prompt("choose either rock, paper, or scissors");
+                playerChoice = playerChoice.toLowerCase();
+                computerChoice = getComputerChoice();
+                console.log(playRound(playerChoice, computerChoice));
+            }
+        }
+        
     }
 }
+
+console.log(game());
