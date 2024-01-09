@@ -85,14 +85,14 @@ function game(){
                 if(formattedResult.charAt(4) === "W"){
                     playerScore += 1;
                     if (playerScore === 3){
-                        console.log("You Won!");
+                        console.log("The Player Wins!");
                         break;
                     }
                 }
                 else if (formattedResult.charAt(4) == "L"){
                     computerScore += 1;
                     if (computerScore === 3){
-                        console.log("You Lost!");
+                        console.log("The Computer Wins!");
                         break;
                     }
                 }
