@@ -47,8 +47,8 @@ function playRound(playerSelection, computerSelection){
 
 function game(){
     for (let i = 0; i < 5; i++) {
-        playerChoice = prompt("choose either rock, paper, or scissors");
-        computerChoice = getComputerChoice();
+        let playerChoice = prompt("choose either rock, paper, or scissors");
+        let computerChoice = getComputerChoice();
         console.log(playRound(playerChoice, computerChoice));
 
         if (playerChoice === computerChoice){
