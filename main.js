@@ -48,12 +48,39 @@ function playRound(playerSelection, computerSelection){
 function game(){
     let playerScore = 0;
     let computerScore = 0;
+    let playerChoice;
+    let result;
 
-    for (let i = 0; i < 5; i++) {
-        let playerChoice = prompt("choose either rock, paper, or scissors");
-        let computerChoice = getComputerChoice();
-        let result = playRound(playerChoice, computerChoice);
-        console.log(result);
+    //commented best of five round logic
+    //for (let i = 0; i < 5; i++) {
+        const rockBtn = document.querySelector("#rock");
+        rockBtn.addEventListener('click', () => {
+            playerChoice = "rock";
+            let computerChoice = getComputerChoice();
+            let result = playRound(playerChoice, computerChoice);
+            console.log(result);
+        });
+
+        const paperBtn = document.querySelector("#paper");
+        paperBtn.addEventListener('click', () =>{
+            playerChoice = "paper";
+            let computerChoice = getComputerChoice();
+            let result = playRound(playerChoice, computerChoice);
+            console.log(result);
+        });
+
+        const scissorsBtn = document.querySelector("#scissors");
+        scissorsBtn.addEventListener('click', () =>{
+            playerChoice = "scissors";
+            let computerChoice = getComputerChoice();
+            let result = playRound(playerChoice, computerChoice);
+            console.log(result);
+        });
+
+        //let playerChoice = prompt("choose either rock, paper, or scissors");
+        //let computerChoice = getComputerChoice();
+        //let result = playRound(playerChoice, computerChoice);
+        //console.log(result);
 
         let formattedResult = String(result);
 
@@ -61,16 +88,16 @@ function game(){
             playerScore += 1;
             if (playerScore === 3){
                 console.log("You Won!");
-                break;
+               // break;
             }
         }
         else if (formattedResult.charAt(4) == "L"){
             computerScore += 1;
             if (computerScore === 3){
                 console.log("You Lost!");
-                break;
+                //break;
             }
-        }
+        //}
 
         if (playerChoice === computerChoice){
             while(playerChoice === computerChoice){
