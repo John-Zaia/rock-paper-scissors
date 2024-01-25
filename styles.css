@@ -2,3 +2,20 @@ img{
     width: 200px;
     height: 200px;
 }
+
+.buttonContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#results{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+button{
+    margin-left: 25px;
+}

@@ -58,7 +58,14 @@ function game(){
             playerChoice = "rock";
             let computerChoice = getComputerChoice();
             let result = playRound(playerChoice, computerChoice);
-            console.log(result);
+
+            const resultsContainer = document.querySelector("#results");
+            let p = document.createElement('p');
+            p.classList.add('p');
+            p.textContent = result;
+
+            resultsContainer.innerHTML = '';
+            resultsContainer.appendChild(p);
         });
 
         const paperBtn = document.querySelector("#paper");
@@ -67,6 +74,14 @@ function game(){
             let computerChoice = getComputerChoice();
             let result = playRound(playerChoice, computerChoice);
             console.log(result);
+
+            const resultsContainer = document.querySelector("#results");
+            let p = document.createElement('p');
+            p.classList.add('p');
+            p.textContent = result;
+
+            resultsContainer.innerHTML = '';
+            resultsContainer.appendChild(p);
         });
 
         const scissorsBtn = document.querySelector("#scissors");
@@ -75,12 +90,15 @@ function game(){
             let computerChoice = getComputerChoice();
             let result = playRound(playerChoice, computerChoice);
             console.log(result);
-        });
 
-        //let playerChoice = prompt("choose either rock, paper, or scissors");
-        //let computerChoice = getComputerChoice();
-        //let result = playRound(playerChoice, computerChoice);
-        //console.log(result);
+            const resultsContainer = document.querySelector("#results");
+            let p = document.createElement('p');
+            p.classList.add('p');
+            p.textContent = result;
+
+            resultsContainer.innerHTML = '';
+            resultsContainer.appendChild(p);
+        });
 
         let formattedResult = String(result);
 
