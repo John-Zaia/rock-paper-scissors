@@ -49,12 +49,11 @@ function game(){
     let playerScore = 0;
     let computerScore = 0;
     let playerChoice;
+    let computerChoice;
     let result;
 
-    //commented best of five round logic
-    //for (let i = 0; i < 5; i++) {
         const rockBtn = document.querySelector("#rock");
-        rockBtn.addEventListener('click', () => {
+        rockBtn.addEventListener('click', () => { 
             playerChoice = "rock";
             let computerChoice = getComputerChoice();
             let result = playRound(playerChoice, computerChoice);
@@ -66,6 +65,45 @@ function game(){
 
             resultsContainer.innerHTML = '';
             resultsContainer.appendChild(p);
+            
+            let formattedResult = String(result);
+
+            if(formattedResult.charAt(4) === "W"){
+                playerScore += 1;
+                if (playerScore === 3){
+                    console.log("You Won!");
+                }
+            }
+            else if (formattedResult.charAt(4) == "L"){
+                computerScore += 1;
+                if (computerScore === 3){
+                    console.log("You Lost!");
+                }
+            }
+            console.log("player " + playerScore);
+            console.log("computer " + computerScore);
+            console.log("player " + playerScore);
+            console.log("computer " + computerScore);
+            const scoreContainer = document.querySelector("#score");
+            let scoreItemPlayer = document.createElement('p');
+            let scoreItemComputer = document.createElement('p');
+
+            scoreItemPlayer.classList.add('p');
+            scoreItemComputer.classList.add('p');
+
+            scoreItemPlayer.textContent = "Player " + playerScore;
+            scoreItemComputer.textContent = "Computer " + computerScore;
+
+            scoreContainer.innerHTML = '';
+            scoreContainer.append(scoreItemPlayer);
+            scoreContainer.append(scoreItemComputer);
+
+            if(playerScore === 5){
+                alert("You Won!");
+            }
+            else if(computerScore === 5){
+                alert("You Lost!");
+            }
         });
 
         const paperBtn = document.querySelector("#paper");
@@ -73,7 +111,6 @@ function game(){
             playerChoice = "paper";
             let computerChoice = getComputerChoice();
             let result = playRound(playerChoice, computerChoice);
-            console.log(result);
 
             const resultsContainer = document.querySelector("#results");
             let p = document.createElement('p');
@@ -81,7 +118,44 @@ function game(){
             p.textContent = result;
 
             resultsContainer.innerHTML = '';
-            resultsContainer.appendChild(p);
+            resultsContainer.appendChild(p);           
+               
+            let formattedResult = String(result);
+            
+            if(formattedResult.charAt(4) === "W"){
+                playerScore += 1;
+                if (playerScore === 3){
+                    console.log("You Won!");
+                }
+            }
+            else if (formattedResult.charAt(4) == "L"){
+                computerScore += 1;
+                if (computerScore === 3){
+                    console.log("You Lost!");
+                }
+            }
+            console.log("player " + playerScore);
+            console.log("computer " + computerScore);
+            const scoreContainer = document.querySelector("#score");
+            let scoreItemPlayer = document.createElement('p');
+            let scoreItemComputer = document.createElement('p');
+
+            scoreItemPlayer.classList.add('p');
+            scoreItemComputer.classList.add('p');
+
+            scoreItemPlayer.textContent = "Player " + playerScore;
+            scoreItemComputer.textContent = "Computer " + computerScore;
+
+            scoreContainer.innerHTML = '';
+            scoreContainer.append(scoreItemPlayer);
+            scoreContainer.append(scoreItemComputer);
+
+            if(playerScore === 5){
+                alert("You Won!");
+            }
+            else if(computerScore === 5){
+                alert("You Lost!");
+            }
         });
 
         const scissorsBtn = document.querySelector("#scissors");
@@ -89,7 +163,6 @@ function game(){
             playerChoice = "scissors";
             let computerChoice = getComputerChoice();
             let result = playRound(playerChoice, computerChoice);
-            console.log(result);
 
             const resultsContainer = document.querySelector("#results");
             let p = document.createElement('p');
@@ -97,54 +170,46 @@ function game(){
             p.textContent = result;
 
             resultsContainer.innerHTML = '';
-            resultsContainer.appendChild(p);
+            resultsContainer.appendChild(p);         
+               
+            let formattedResult = String(result);
+
+            if(formattedResult.charAt(4) === "W"){
+                playerScore += 1;
+                if (playerScore === 3){
+                    console.log("You Won!");
+                }
+            }
+            else if (formattedResult.charAt(4) == "L"){
+                computerScore += 1;
+                if (computerScore === 3){
+                    console.log("You Lost!");
+                }
+            }
+            console.log("player " + playerScore);
+            console.log("computer " + computerScore);
+            const scoreContainer = document.querySelector("#score");
+            let scoreItemPlayer = document.createElement('p');
+            let scoreItemComputer = document.createElement('p');
+
+            scoreItemPlayer.classList.add('p');
+            scoreItemComputer.classList.add('p');
+
+            scoreItemPlayer.textContent = "Player " + playerScore;
+            scoreItemComputer.textContent = "Computer " + computerScore;
+
+            scoreContainer.innerHTML = '';
+            scoreContainer.append(scoreItemPlayer);
+            scoreContainer.append(scoreItemComputer);
+
+            if(playerScore === 5){
+                alert("You Won!");
+            }
+            else if(computerScore === 5){
+                alert("You Lost!");
+            }
         });
-
-        let formattedResult = String(result);
-
-        if(formattedResult.charAt(4) === "W"){
-            playerScore += 1;
-            if (playerScore === 3){
-                console.log("You Won!");
-               // break;
-            }
-        }
-        else if (formattedResult.charAt(4) == "L"){
-            computerScore += 1;
-            if (computerScore === 3){
-                console.log("You Lost!");
-                //break;
-            }
-        //}
-
-        if (playerChoice === computerChoice){
-            while(playerChoice === computerChoice){
-                playerChoice = prompt("choose either rock, paper, or scissors");
-                playerChoice = playerChoice.toLowerCase();
-                computerChoice = getComputerChoice();
-                result = playRound(playerChoice, computerChoice);
-                console.log(result);
-
-                formattedResult = String(result);
-
-                if(formattedResult.charAt(4) === "W"){
-                    playerScore += 1;
-                    if (playerScore === 3){
-                        console.log("The Player Wins!");
-                        break;
-                    }
-                }
-                else if (formattedResult.charAt(4) == "L"){
-                    computerScore += 1;
-                    if (computerScore === 3){
-                        console.log("The Computer Wins!");
-                        break;
-                    }
-                }
-            }
-        }
         
-    }
 }
 
 console.log(game());

@@ -19,3 +19,17 @@ img{
 button{
     margin-left: 25px;
 }
+
+#score{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scoreItem{
+    padding-left: 50px;
+}
+
+p{
+    padding-left: 20px;
+}
